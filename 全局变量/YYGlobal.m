@@ -8,6 +8,22 @@
 
 #import "YYGlobal.h"
 
+
 @implementation YYGlobal
+
+static YYGlobal *sharedObj = nil;
++(instancetype)sharedInstance{
+    static dispatch_once_t onece;
+    dispatch_once(&onece, ^{
+        if (sharedObj==nil) {
+            sharedObj=[[self alloc] init];
+            sharedObj.deviceInfo=[YYDeviceInfo new];
+            sharedObj.clientInfo=[YYClientInfo new];
+        }
+    });
+    return sharedObj;
+}
+
+
 
 @end

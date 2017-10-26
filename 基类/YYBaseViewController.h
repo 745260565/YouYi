@@ -8,6 +8,43 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YYBaseViewController : UIViewController
+@interface YYBaseViewController : UIViewController<UINavigationControllerDelegate>
+@property(nonatomic, strong)UIView *headerView;
+@property(nonatomic, strong)UIView *contentView;
+@property(nonatomic, strong)UILabel *titleLabel;
+@property(nonatomic, strong)UIButton *backBtn;
+@property(nonatomic)BOOL hiddenTabBarWhenPushed;
+@property(nonatomic)BOOL isLoading;
+- (void)popBack;
 
+- (void)showNullView:(BOOL)show tips:(NSString*)nullTips;
+/**
+ *  功能:显示loading
+ */
+- (void)showLoading;
+
+/**
+ *  功能:显示loading
+ */
+- (void)showLoadingWithMessage:(NSString *)message;
+
+/**
+ *  功能:显示loading
+ */
+- (void)showLoadingWithMessage:(NSString *)message hideAfter:(NSTimeInterval)second;
+
+/**
+ *  功能:显示loading
+ */
+- (void)showLoadingWithMessage:(NSString *)message onView:(UIView *)aView hideAfter:(NSTimeInterval)second;
+
+/**
+ *  功能:隐藏loading
+ */
+- (void)hideLoading;
+
+/**
+ *  功能:隐藏loading
+ */
+- (void)hideLoadingOnView:(UIView *)aView;
 @end

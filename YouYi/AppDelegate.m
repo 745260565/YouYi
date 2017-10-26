@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "YYBaseTabBarController.h"
+#import "TBCityIconFont.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [TBCityIconFont setFontName:@"iconfont"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     YYBaseTabBarController *mainTabBarController = [[YYBaseTabBarController alloc] init];

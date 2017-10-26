@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface YYDeviceInfo : NSObject
-
+@property(nonatomic,strong)NSString *device_id;
+@property(nonatomic,strong)NSString *model;
+@property(nonatomic,strong)NSString *resolution;
+@property(nonatomic,strong)NSString *os;
 @end

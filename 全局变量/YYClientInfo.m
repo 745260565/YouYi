@@ -9,5 +9,17 @@
 #import "YYClientInfo.h"
 
 @implementation YYClientInfo
+-(NSString*)package_name{
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+}
+
+-(NSString*)version_name{
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    
+}
+
+-(NSString*)version_code{
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+}
 
 @end

@@ -12,6 +12,10 @@
 #import "Masonry.h"
 #import "MBProgressHUD.h"
 
+#import "YYGlobal.h"
+#import "YYDeviceInfo.h"
+#import "YYClientInfo.h"
+
 #import "UIImage+Color.h"
 #import "UIImage+Circle.h"
 #import "UIView+Size.h"
