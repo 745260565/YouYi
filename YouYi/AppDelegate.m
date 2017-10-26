@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "YYBaseTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    YYBaseTabBarController *mainTabBarController = [[YYBaseTabBarController alloc] init];
+    [mainTabBarController setControllersWithNames:@[@"YYHomePageViewController",@"YYInvestmentViewController",@"YYWithdrawDepositViewController",@"YYPesonalCenterViewController"]];
+    mainTabBarController.selectedIndex = 0;
+     self.window.rootViewController = mainTabBarController;
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }

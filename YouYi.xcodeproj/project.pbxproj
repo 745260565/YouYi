@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A3083DC1FA183DD00AB8675 /* YYBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083DB1FA183DD00AB8675 /* YYBaseTabBarController.m */; };
+		6A3083DF1FA183FD00AB8675 /* YYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083DE1FA183FD00AB8675 /* YYBaseViewController.m */; };
+		6A3083F31FA1899F00AB8675 /* YYHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083F21FA1899F00AB8675 /* YYHomePageViewController.m */; };
+		6A3083F61FA189BC00AB8675 /* YYInvestmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083F51FA189BC00AB8675 /* YYInvestmentViewController.m */; };
+		6A3083F91FA189DC00AB8675 /* YYWithdrawDepositViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083F81FA189DC00AB8675 /* YYWithdrawDepositViewController.m */; };
+		6A3083FC1FA18A0700AB8675 /* YYPesonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083FB1FA18A0700AB8675 /* YYPesonalCenterViewController.m */; };
 		6AD9789F1FA0859D009D66AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9789E1FA0859D009D66AD /* AppDelegate.m */; };
-		6AD978A21FA0859D009D66AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD978A11FA0859D009D66AD /* ViewController.m */; };
-		6AD978A51FA0859D009D66AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD978A31FA0859D009D66AD /* Main.storyboard */; };
 		6AD978A71FA0859D009D66AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AD978A61FA0859D009D66AD /* Assets.xcassets */; };
 		6AD978AA1FA0859D009D66AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD978A81FA0859D009D66AD /* LaunchScreen.storyboard */; };
 		6AD978AD1FA0859D009D66AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD978AC1FA0859D009D66AD /* main.m */; };
@@ -38,12 +42,21 @@
 /* Begin PBXFileReference section */
 		1167FE9A48E21A23E1D4ED48 /* Pods-YouYi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouYi.release.xcconfig"; path = "Pods/Target Support Files/Pods-YouYi/Pods-YouYi.release.xcconfig"; sourceTree = "<group>"; };
 		26C8C37D6BF13A888352C589 /* libPods-YouYi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YouYi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A3083DA1FA183DD00AB8675 /* YYBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYBaseTabBarController.h; sourceTree = "<group>"; };
+		6A3083DB1FA183DD00AB8675 /* YYBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYBaseTabBarController.m; sourceTree = "<group>"; };
+		6A3083DD1FA183FD00AB8675 /* YYBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYBaseViewController.h; sourceTree = "<group>"; };
+		6A3083DE1FA183FD00AB8675 /* YYBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYBaseViewController.m; sourceTree = "<group>"; };
+		6A3083F11FA1899F00AB8675 /* YYHomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYHomePageViewController.h; sourceTree = "<group>"; };
+		6A3083F21FA1899F00AB8675 /* YYHomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYHomePageViewController.m; sourceTree = "<group>"; };
+		6A3083F41FA189BC00AB8675 /* YYInvestmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYInvestmentViewController.h; sourceTree = "<group>"; };
+		6A3083F51FA189BC00AB8675 /* YYInvestmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYInvestmentViewController.m; sourceTree = "<group>"; };
+		6A3083F71FA189DC00AB8675 /* YYWithdrawDepositViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYWithdrawDepositViewController.h; sourceTree = "<group>"; };
+		6A3083F81FA189DC00AB8675 /* YYWithdrawDepositViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYWithdrawDepositViewController.m; sourceTree = "<group>"; };
+		6A3083FA1FA18A0700AB8675 /* YYPesonalCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYPesonalCenterViewController.h; sourceTree = "<group>"; };
+		6A3083FB1FA18A0700AB8675 /* YYPesonalCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYPesonalCenterViewController.m; sourceTree = "<group>"; };
 		6AD9789A1FA0859D009D66AD /* YouYi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouYi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD9789D1FA0859D009D66AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6AD9789E1FA0859D009D66AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6AD978A01FA0859D009D66AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6AD978A11FA0859D009D66AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6AD978A41FA0859D009D66AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AD978A61FA0859D009D66AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AD978A91FA0859D009D66AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AD978AB1FA0859D009D66AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,10 +105,108 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6A3083D61FA1818A00AB8675 /* 基类 */ = {
+			isa = PBXGroup;
+			children = (
+				6A3083DA1FA183DD00AB8675 /* YYBaseTabBarController.h */,
+				6A3083DB1FA183DD00AB8675 /* YYBaseTabBarController.m */,
+				6A3083DD1FA183FD00AB8675 /* YYBaseViewController.h */,
+				6A3083DE1FA183FD00AB8675 /* YYBaseViewController.m */,
+			);
+			path = "基类";
+			sourceTree = "<group>";
+		};
+		6A3083D71FA181A400AB8675 /* 全局变量 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "全局变量";
+			sourceTree = "<group>";
+		};
+		6A3083D81FA181BE00AB8675 /* 第三方控件 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "第三方控件";
+			sourceTree = "<group>";
+		};
+		6A3083D91FA1821200AB8675 /* 自定义控件 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "自定义控件";
+			sourceTree = "<group>";
+		};
+		6A3083E01FA1864200AB8675 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				6A3083EA1FA187D700AB8675 /* 登录注册 */,
+				6A3083E21FA1874200AB8675 /* 首页 */,
+				6A3083E31FA1875900AB8675 /* 投资 */,
+				6A3083E81FA187A400AB8675 /* 提现 */,
+				6A3083E91FA187B900AB8675 /* 我的 */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		6A3083E11FA1866C00AB8675 /* 网络请求 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "网络请求";
+			sourceTree = "<group>";
+		};
+		6A3083E21FA1874200AB8675 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				6A3083F11FA1899F00AB8675 /* YYHomePageViewController.h */,
+				6A3083F21FA1899F00AB8675 /* YYHomePageViewController.m */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		6A3083E31FA1875900AB8675 /* 投资 */ = {
+			isa = PBXGroup;
+			children = (
+				6A3083F41FA189BC00AB8675 /* YYInvestmentViewController.h */,
+				6A3083F51FA189BC00AB8675 /* YYInvestmentViewController.m */,
+			);
+			path = "投资";
+			sourceTree = "<group>";
+		};
+		6A3083E81FA187A400AB8675 /* 提现 */ = {
+			isa = PBXGroup;
+			children = (
+				6A3083F71FA189DC00AB8675 /* YYWithdrawDepositViewController.h */,
+				6A3083F81FA189DC00AB8675 /* YYWithdrawDepositViewController.m */,
+			);
+			path = "提现";
+			sourceTree = "<group>";
+		};
+		6A3083E91FA187B900AB8675 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				6A3083FA1FA18A0700AB8675 /* YYPesonalCenterViewController.h */,
+				6A3083FB1FA18A0700AB8675 /* YYPesonalCenterViewController.m */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		6A3083EA1FA187D700AB8675 /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "登录注册";
+			sourceTree = "<group>";
+		};
 		6AD978911FA0859D009D66AD = {
 			isa = PBXGroup;
 			children = (
 				6AD9789C1FA0859D009D66AD /* YouYi */,
+				6A3083D61FA1818A00AB8675 /* 基类 */,
+				6A3083D91FA1821200AB8675 /* 自定义控件 */,
+				6A3083D71FA181A400AB8675 /* 全局变量 */,
+				6A3083D81FA181BE00AB8675 /* 第三方控件 */,
 				6AD978B51FA0859D009D66AD /* YouYiTests */,
 				6AD978C01FA0859D009D66AD /* YouYiUITests */,
 				6AD9789B1FA0859D009D66AD /* Products */,
@@ -119,9 +230,8 @@
 			children = (
 				6AD9789D1FA0859D009D66AD /* AppDelegate.h */,
 				6AD9789E1FA0859D009D66AD /* AppDelegate.m */,
-				6AD978A01FA0859D009D66AD /* ViewController.h */,
-				6AD978A11FA0859D009D66AD /* ViewController.m */,
-				6AD978A31FA0859D009D66AD /* Main.storyboard */,
+				6A3083E01FA1864200AB8675 /* VC */,
+				6A3083E11FA1866C00AB8675 /* 网络请求 */,
 				6AD978A61FA0859D009D66AD /* Assets.xcassets */,
 				6AD978A81FA0859D009D66AD /* LaunchScreen.storyboard */,
 				6AD978AB1FA0859D009D66AD /* Info.plist */,
@@ -267,7 +377,6 @@
 			files = (
 				6AD978AA1FA0859D009D66AD /* LaunchScreen.storyboard in Resources */,
 				6AD978A71FA0859D009D66AD /* Assets.xcassets in Resources */,
-				6AD978A51FA0859D009D66AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +452,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD978A21FA0859D009D66AD /* ViewController.m in Sources */,
+				6A3083F91FA189DC00AB8675 /* YYWithdrawDepositViewController.m in Sources */,
+				6A3083DC1FA183DD00AB8675 /* YYBaseTabBarController.m in Sources */,
+				6A3083DF1FA183FD00AB8675 /* YYBaseViewController.m in Sources */,
+				6A3083F31FA1899F00AB8675 /* YYHomePageViewController.m in Sources */,
+				6A3083F61FA189BC00AB8675 /* YYInvestmentViewController.m in Sources */,
 				6AD978AD1FA0859D009D66AD /* main.m in Sources */,
+				6A3083FC1FA18A0700AB8675 /* YYPesonalCenterViewController.m in Sources */,
 				6AD9789F1FA0859D009D66AD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,14 +495,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6AD978A31FA0859D009D66AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6AD978A41FA0859D009D66AD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6AD978A81FA0859D009D66AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
