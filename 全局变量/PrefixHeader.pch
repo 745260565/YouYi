@@ -1,0 +1,104 @@
+//
+//  PrefixHeader.pch
+//  YouYi
+//
+//  Created by chenghao on 2017/10/26.
+//  Copyright © 2017年 com.72g.www. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Masonry.h"
+#import "MBProgressHUD.h"
+
+#import "UIImage+Color.h"
+#import "UIImage+Circle.h"
+#import "UIView+Size.h"
+#import "UIView+create.h"
+#import "UIView+FindUIViewController.h"
+#import "UIViewController+runtime.h"
+#import "UIButton+Block.h"
+#import "UIColor+extend.h"
+#import "NSMutableArray+safe.h"
+#import "NSMutableDictionary+safe.h"
+#import "NSMutableSet+safe.h"
+#import "EDBase64Util.h"
+#import "EDCryptoUtil.h"
+#import "NSObject+runtime.h"
+#import "NSString+MD5.h"
+
+// 弱引用/强引用
+#define weakify_self   __weak typeof(self) weakSelf = self;
+#define strongify_self __strong typeof(self) self = weakSelf;
+
+// 单例
+#undef    AS_SINGLETON
+#define AS_SINGLETON( __class ) \
++ (__class *)sharedInstance;
+
+#undef    DEF_SINGLETON
+#define DEF_SINGLETON( __class ) \
++ (__class *)sharedInstance \
+{ \
+static dispatch_once_t once; \
+static __class * __singleton__; \
+dispatch_once(&once, ^{ __singleton__ = [[__class alloc] init]; } ); \
+return __singleton__; \
+}
+
+//常用对象
+#define kApplication [UIApplication sharedApplication]
+#define kAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+#define kUserDefaults [NSUserDefaults standardUserDefaults]
+#define kNotificationCenter [NSNotificationCenter defaultCenter]
+
+//获取常用
+//APP版本号
+#define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+//系统版本号
+#define kSystemVersion [[UIDevice currentDevice] systemVersion]
+//获取当前语言
+#define kCurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
+//判断是否为iPhone
+#define kIsiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+//判断是否为iPad
+#define kIsiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//判断是否为横屏
+#define kIsLandscape ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft || [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight)
+//获取沙盒Document路径
+#define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
+//获取沙盒temp路径
+#define kTempPath NSTemporaryDirectory()
+//获取沙盒Cache路径
+#define kCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
+
+//测试的时候打印语句，发布程序的时候自动去除打印语句
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {if(INHouse) NSLog(__VA_ARGS__);}
+#endif
+
+//屏幕宽高
+#define ScreenWidth ([UIScreen mainScreen].bounds.size.width<[UIScreen mainScreen].bounds.size.height ? [UIScreen mainScreen].bounds.size.height : [UIScreen mainScreen].bounds.size.width)
+#define ScreenHeight ([UIScreen mainScreen].bounds.size.width>[UIScreen mainScreen].bounds.size.height ? [UIScreen mainScreen].bounds.size.height : [UIScreen mainScreen].bounds.size.width)
+
+#define LengthInIP6(lengthInIP6) ((CGFloat)lengthInIP6)/375*ScreenHeight
+
+//颜色
+
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 \
+blue:((float)(rgbValue & 0xFF)) / 255.0 \
+alpha:1.0]
+#define UIColorFromRGBA(rgbValue, a) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 \
+blue:((float)(rgbValue & 0xFF)) / 255.0 \
+alpha:a]
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
