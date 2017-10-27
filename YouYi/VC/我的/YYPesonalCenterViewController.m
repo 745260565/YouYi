@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setHeaderViewHeight:100];
     // Do any additional setup after loading the view.
 }
 

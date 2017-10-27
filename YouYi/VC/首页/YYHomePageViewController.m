@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setTitle:@"优易理财管家"];
     // Do any additional setup after loading the view.
 }
 

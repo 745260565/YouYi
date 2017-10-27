@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "YYBaseTabBarController.h"
-#import "TBCityIconFont.h"
+#import "YYHomePageViewController.h"
+#import "YYInvestmentViewController.h"
+#import "YYWithdrawDepositViewController.h"
+#import "YYPesonalCenterViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,14 +20,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     [TBCityIconFont setFontName:@"iconfont"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    YYBaseTabBarController *mainTabBarController = [[YYBaseTabBarController alloc] init];
-    [mainTabBarController setControllersWithNames:@[@"YYHomePageViewController",@"YYInvestmentViewController",@"YYWithdrawDepositViewController",@"YYPesonalCenterViewController"]];
+    UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
+    self.window.rootViewController = mainTabBarController;
+    
+    YYHomePageViewController *vc1 = [[YYHomePageViewController alloc] initWithTabBarTitle:@"首页" tabBarImageName:@"\U0000e65c"];
+    YYInvestmentViewController *vc2 = [[YYInvestmentViewController alloc] initWithTabBarTitle:@"投资" tabBarImageName:@"\U0000e604"];
+    YYWithdrawDepositViewController *vc3 = [[YYWithdrawDepositViewController alloc] initWithTabBarTitle:@"提现" tabBarImageName:@"\U0000e605"];
+    YYPesonalCenterViewController *vc4 = [[YYPesonalCenterViewController alloc] initWithTabBarTitle:@"我的" tabBarImageName:@"\U0000e6a6"];
+    
+//    YYBaseViewController *vc1 = [[YYBaseViewController alloc] init];
+//    vc1.tabBarItem.title = @"首页";
+//    vc1.tabBarItem.image = [UIImage iconWithInfo:TBCityIconInfoMake(@"\U0000e65c", LengthInIP6(30), [UIColor blackColor])];
+//    vc1.tabBarItem.selectedImage = [UIImage iconWithInfo:TBCityIconInfoMake(@"\U0000e65c", LengthInIP6(30), [UIColor orangeColor])];
+
+    
+    mainTabBarController.viewControllers = @[vc1,vc2,vc3,vc4];
+    
     mainTabBarController.selectedIndex = 0;
-     self.window.rootViewController = mainTabBarController;
     [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;

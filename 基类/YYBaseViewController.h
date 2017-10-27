@@ -15,7 +15,12 @@
 @property(nonatomic, strong)UIButton *backBtn;
 @property(nonatomic)BOOL hiddenTabBarWhenPushed;
 @property(nonatomic)BOOL isLoading;
+
+- (instancetype)initWithTabBarTitle:(NSString*)titleString tabBarImageName:(NSString*)imageName;
+
 - (void)popBack;
+
+- (void)setHeaderViewHeight:(CGFloat)headerViewHeight;
 
 - (void)showNullView:(BOOL)show tips:(NSString*)nullTips;
 /**

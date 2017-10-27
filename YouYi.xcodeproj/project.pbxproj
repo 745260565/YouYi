@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6A2B14E91FA1E28C00EF5C9C /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2B14E71FA1E28C00EF5C9C /* KeychainWrapper.m */; };
-		6A3083DC1FA183DD00AB8675 /* YYBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083DB1FA183DD00AB8675 /* YYBaseTabBarController.m */; };
 		6A3083DF1FA183FD00AB8675 /* YYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083DE1FA183FD00AB8675 /* YYBaseViewController.m */; };
 		6A3083F31FA1899F00AB8675 /* YYHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083F21FA1899F00AB8675 /* YYHomePageViewController.m */; };
 		6A3083F61FA189BC00AB8675 /* YYInvestmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3083F51FA189BC00AB8675 /* YYInvestmentViewController.m */; };
@@ -92,8 +91,6 @@
 		26C8C37D6BF13A888352C589 /* libPods-YouYi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YouYi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2B14E71FA1E28C00EF5C9C /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		6A2B14E81FA1E28C00EF5C9C /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
-		6A3083DA1FA183DD00AB8675 /* YYBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYBaseTabBarController.h; sourceTree = "<group>"; };
-		6A3083DB1FA183DD00AB8675 /* YYBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYBaseTabBarController.m; sourceTree = "<group>"; };
 		6A3083DD1FA183FD00AB8675 /* YYBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYBaseViewController.h; sourceTree = "<group>"; };
 		6A3083DE1FA183FD00AB8675 /* YYBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYBaseViewController.m; sourceTree = "<group>"; };
 		6A3083F11FA1899F00AB8675 /* YYHomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYHomePageViewController.h; sourceTree = "<group>"; };
@@ -252,8 +249,6 @@
 		6A3083D61FA1818A00AB8675 /* 基类 */ = {
 			isa = PBXGroup;
 			children = (
-				6A3083DA1FA183DD00AB8675 /* YYBaseTabBarController.h */,
-				6A3083DB1FA183DD00AB8675 /* YYBaseTabBarController.m */,
 				6A3083DD1FA183FD00AB8675 /* YYBaseViewController.h */,
 				6A3083DE1FA183FD00AB8675 /* YYBaseViewController.m */,
 			);
@@ -792,7 +787,6 @@
 				6A3084A31FA1BA4700AB8675 /* EDCryptoUtil.m in Sources */,
 				6A3084571FA1AF9D00AB8675 /* UIScrollView+MJExtension.m in Sources */,
 				6A2B14E91FA1E28C00EF5C9C /* KeychainWrapper.m in Sources */,
-				6A3083DC1FA183DD00AB8675 /* YYBaseTabBarController.m in Sources */,
 				6A3084911FA1B9C900AB8675 /* UIColor+extend.m in Sources */,
 				6A30847F1FA1B87900AB8675 /* UIImage+Circle.m in Sources */,
 				6A3083DF1FA183FD00AB8675 /* YYBaseViewController.m in Sources */,

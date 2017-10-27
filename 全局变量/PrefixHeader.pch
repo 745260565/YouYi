@@ -11,6 +11,7 @@
 
 #import "Masonry.h"
 #import "MBProgressHUD.h"
+#import "TBCityIconFont.h"
 
 #import "YYGlobal.h"
 #import "YYDeviceInfo.h"

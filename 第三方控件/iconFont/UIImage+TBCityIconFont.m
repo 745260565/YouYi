@@ -29,8 +29,8 @@
     
     UIImage *image = [UIImage imageWithCGImage:UIGraphicsGetImageFromCurrentImageContext().CGImage scale:scale orientation:UIImageOrientationUp];
     UIGraphicsEndImageContext();
-    
-    return image;
+    //重要
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 @end
