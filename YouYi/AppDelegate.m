@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "YYBaseNavigationController.h"
 #import "YYHomePageViewController.h"
 #import "YYInvestmentViewController.h"
 #import "YYWithdrawDepositViewController.h"
@@ -24,7 +25,7 @@
     [TBCityIconFont setFontName:@"iconfont"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = WhiteColor;
     UITabBarController *mainTabBarController = [[UITabBarController alloc] init];
     self.window.rootViewController = mainTabBarController;
     
@@ -33,13 +34,13 @@
     YYWithdrawDepositViewController *vc3 = [[YYWithdrawDepositViewController alloc] initWithTabBarTitle:@"提现" tabBarImageName:@"\U0000e605"];
     YYPesonalCenterViewController *vc4 = [[YYPesonalCenterViewController alloc] initWithTabBarTitle:@"我的" tabBarImageName:@"\U0000e6a6"];
     
-//    YYBaseViewController *vc1 = [[YYBaseViewController alloc] init];
-//    vc1.tabBarItem.title = @"首页";
-//    vc1.tabBarItem.image = [UIImage iconWithInfo:TBCityIconInfoMake(@"\U0000e65c", LengthInIP6(30), [UIColor blackColor])];
-//    vc1.tabBarItem.selectedImage = [UIImage iconWithInfo:TBCityIconInfoMake(@"\U0000e65c", LengthInIP6(30), [UIColor orangeColor])];
-
+    YYBaseNavigationController *nav1 = [[YYBaseNavigationController alloc] initWithRootViewController:vc1];
+    YYBaseNavigationController *nav2 = [[YYBaseNavigationController alloc] initWithRootViewController:vc2];
+    YYBaseNavigationController *nav3 = [[YYBaseNavigationController alloc] initWithRootViewController:vc3];
+    YYBaseNavigationController *nav4 = [[YYBaseNavigationController alloc] initWithRootViewController:vc4];
     
-    mainTabBarController.viewControllers = @[vc1,vc2,vc3,vc4];
+    mainTabBarController.viewControllers = @[nav1,nav2,nav3,nav4];
+
     
     mainTabBarController.selectedIndex = 0;
     [self.window makeKeyAndVisible];

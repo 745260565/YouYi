@@ -60,6 +60,8 @@
 		6A3084C61FA1D79A00AB8675 /* TBCityIconInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084C11FA1D79700AB8675 /* TBCityIconInfo.m */; };
 		6A3084C71FA1D79B00AB8675 /* UIImage+TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084C31FA1D79800AB8675 /* UIImage+TBCityIconFont.m */; };
 		6A3084C81FA1D79B00AB8675 /* TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084C51FA1D79A00AB8675 /* TBCityIconFont.m */; };
+		6A47E0691FA300A10081D550 /* YYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47E0681FA300A10081D550 /* YYMessageViewController.m */; };
+		6A47E06C1FA306A20081D550 /* YYBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47E06B1FA306A20081D550 /* YYBaseNavigationController.m */; };
 		6AD9789F1FA0859D009D66AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9789E1FA0859D009D66AD /* AppDelegate.m */; };
 		6AD978A71FA0859D009D66AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AD978A61FA0859D009D66AD /* Assets.xcassets */; };
 		6AD978AA1FA0859D009D66AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD978A81FA0859D009D66AD /* LaunchScreen.storyboard */; };
@@ -195,6 +197,10 @@
 		6A3084C31FA1D79800AB8675 /* UIImage+TBCityIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TBCityIconFont.m"; sourceTree = "<group>"; };
 		6A3084C41FA1D79900AB8675 /* TBCityIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityIconFont.h; sourceTree = "<group>"; };
 		6A3084C51FA1D79A00AB8675 /* TBCityIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityIconFont.m; sourceTree = "<group>"; };
+		6A47E0671FA300A10081D550 /* YYMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYMessageViewController.h; sourceTree = "<group>"; };
+		6A47E0681FA300A10081D550 /* YYMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYMessageViewController.m; sourceTree = "<group>"; };
+		6A47E06A1FA306A20081D550 /* YYBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYBaseNavigationController.h; sourceTree = "<group>"; };
+		6A47E06B1FA306A20081D550 /* YYBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYBaseNavigationController.m; sourceTree = "<group>"; };
 		6AD9789A1FA0859D009D66AD /* YouYi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouYi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD9789D1FA0859D009D66AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6AD9789E1FA0859D009D66AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -251,6 +257,8 @@
 			children = (
 				6A3083DD1FA183FD00AB8675 /* YYBaseViewController.h */,
 				6A3083DE1FA183FD00AB8675 /* YYBaseViewController.m */,
+				6A47E06A1FA306A20081D550 /* YYBaseNavigationController.h */,
+				6A47E06B1FA306A20081D550 /* YYBaseNavigationController.m */,
 			);
 			path = "基类";
 			sourceTree = "<group>";
@@ -297,6 +305,7 @@
 				6A3083E31FA1875900AB8675 /* 投资 */,
 				6A3083E81FA187A400AB8675 /* 提现 */,
 				6A3083E91FA187B900AB8675 /* 我的 */,
+				6A47E0661FA3007B0081D550 /* 消息 */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -519,6 +528,15 @@
 				6A3084BE1FA1D71B00AB8675 /* iconfont.ttf */,
 			);
 			path = iconFont;
+			sourceTree = "<group>";
+		};
+		6A47E0661FA3007B0081D550 /* 消息 */ = {
+			isa = PBXGroup;
+			children = (
+				6A47E0671FA300A10081D550 /* YYMessageViewController.h */,
+				6A47E0681FA300A10081D550 /* YYMessageViewController.m */,
+			);
+			path = "消息";
 			sourceTree = "<group>";
 		};
 		6AD978911FA0859D009D66AD = {
@@ -779,6 +797,7 @@
 			files = (
 				6A3083F91FA189DC00AB8675 /* YYWithdrawDepositViewController.m in Sources */,
 				6A3084851FA1B94800AB8675 /* UIViewController+runtime.m in Sources */,
+				6A47E0691FA300A10081D550 /* YYMessageViewController.m in Sources */,
 				6A3084C71FA1D79B00AB8675 /* UIImage+TBCityIconFont.m in Sources */,
 				6A30844E1FA1AF9D00AB8675 /* MJRefreshBackGifFooter.m in Sources */,
 				6A30848A1FA1B98E00AB8675 /* UIView+Size.m in Sources */,
@@ -805,6 +824,7 @@
 				6A3084511FA1AF9D00AB8675 /* MJRefreshGifHeader.m in Sources */,
 				6A3084491FA1AF9D00AB8675 /* MJRefreshFooter.m in Sources */,
 				6A3084981FA1BA0E00AB8675 /* NSMutableArray+safe.m in Sources */,
+				6A47E06C1FA306A20081D550 /* YYBaseNavigationController.m in Sources */,
 				6A3084531FA1AF9D00AB8675 /* MJRefreshStateHeader.m in Sources */,
 				6AD978AD1FA0859D009D66AD /* main.m in Sources */,
 				6A3084A51FA1BA4700AB8675 /* EDBase64Util.m in Sources */,

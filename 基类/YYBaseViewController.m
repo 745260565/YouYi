@@ -7,12 +7,14 @@
 //
 
 #import "YYBaseViewController.h"
+#import "YYMessageViewController.h"
 
 #define HEADER_HEIGHT 64.0
 #define NULLLABELTAG 99
 
 @interface YYBaseViewController ()
 @property(nonatomic, strong) UIView *nullView;
+@property(nonatomic)BOOL isBasePage;
 @end
 
 @implementation YYBaseViewController
@@ -21,9 +23,10 @@
     self = [super init];
     if (self) {
         self.tabBarItem.title = titleString;
-        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor orangeColor]} forState:UIControlStateSelected];
-        self.tabBarItem.image = [UIImage iconWithInfo:TBCityIconInfoMake(imageName, LengthInIP6(30), [UIColor blackColor])];
-        self.tabBarItem.selectedImage = [UIImage iconWithInfo:TBCityIconInfoMake(imageName, LengthInIP6(30), [UIColor orangeColor])];
+        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:MainColor} forState:UIControlStateSelected];
+        self.tabBarItem.image = ICONFONT(imageName, LengthInIP6(30), BlackColor);
+        self.tabBarItem.selectedImage = ICONFONT(imageName, LengthInIP6(30), MainColor);
+        self.isBasePage = YES;
     }
     return self;
 }
@@ -32,7 +35,7 @@
     [super viewDidLoad];
     NSLog(@"LFC: viewDidLoad: %@", self);
     self.navigationController.delegate = self;
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = MainColor;
     self.headerView = [[UIView alloc] init];
     [self.view addSubview:self.headerView];
     [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -45,7 +48,7 @@
     
     _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_backBtn addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
-    [_backBtn setImage:[UIImage iconWithInfo:TBCityIconInfoMake(@"\U0000e60e", 30, [UIColor whiteColor])] forState:UIControlStateNormal];
+    [_backBtn setImage:ICONFONT(@"\U0000e60e", 30, WhiteColor) forState:UIControlStateNormal];
     _backBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [self.headerView addSubview:_backBtn];
     _backBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
@@ -55,11 +58,12 @@
         make.width.mas_equalTo(60);
         make.centerY.mas_equalTo(10);
     }];
+    _backBtn.hidden = self.isBasePage;
     
     self.titleLabel = [[UILabel alloc]init];
     self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.font = [UIFont systemFontOfSize:LengthInIP6(20)];
-    self.titleLabel.textColor = [UIColor whiteColor];
+    self.titleLabel.textColor = WhiteColor;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.headerView addSubview:self.titleLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,17 +74,19 @@
     }];
     
 
-    
-    
-    UIImageView *messageImageView = [[UIImageView alloc] initWithImage:[UIImage iconWithInfo:TBCityIconInfoMake(@"\U0000e62c", 25, [UIColor whiteColor])]];
-    [self.headerView addSubview:messageImageView];
-    [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(20);
+    UIButton *messageButton = [[UIButton alloc] init];
+    messageButton.layer.zPosition = 100;
+    [messageButton setImage:ICONFONT(@"\U0000e62c", 25, WhiteColor) forState:UIControlStateNormal];
+    [messageButton addTarget:self action:@selector(messageAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.headerView addSubview:messageButton];
+    [messageButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(27);
         make.right.mas_equalTo(-20);
     }];
+    messageButton.hidden = !self.isBasePage;
     
     self.contentView = [UIView new];
-    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.contentView.backgroundColor = WhiteColor;
     [self.view addSubview:self.contentView];
     
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -114,8 +120,8 @@
 - (UIView*)nullView {
     if (!_nullView) {
         _nullView = [UIView new];
-        _nullView.backgroundColor = [UIColor whiteColor];
-        UIImageView *imgV = [[UIImageView alloc] initWithImage:[UIImage iconWithInfo:TBCityIconInfoMake(@"\U0000e683", 30, [UIColor whiteColor])]];
+        _nullView.backgroundColor = WhiteColor;
+        UIImageView *imgV = [[UIImageView alloc] initWithImage:ICONFONT(@"\U0000e683", 30, WhiteColor)];
         [_nullView addSubview:imgV];
         [imgV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(0);
@@ -155,6 +161,11 @@
         make.right.mas_equalTo(0);
         make.height.mas_equalTo(LengthInIP6(headerViewHeight));
     }];
+}
+
+- (void)messageAction{
+    YYMessageViewController *messageVC = [[YYMessageViewController alloc] init];
+    [self.navigationController pushViewController:messageVC animated:YES];
 }
 
 - (void)showNullView:(BOOL)show tips:(NSString*)nullTips {
