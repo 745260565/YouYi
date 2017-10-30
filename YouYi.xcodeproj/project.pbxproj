@@ -33,8 +33,6 @@
 		6A3084571FA1AF9D00AB8675 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084411FA1AF9D00AB8675 /* UIScrollView+MJExtension.m */; };
 		6A3084581FA1AF9D00AB8675 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084431FA1AF9D00AB8675 /* UIScrollView+MJRefresh.m */; };
 		6A3084591FA1AF9D00AB8675 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084451FA1AF9D00AB8675 /* UIView+MJExtension.m */; };
-		6A3084771FA1B55600AB8675 /* HTHorizontalSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A30846C1FA1B55600AB8675 /* HTHorizontalSelectionList.m */; };
-		6A3084781FA1B55600AB8675 /* HTHorizontalSelectionListScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A30846E1FA1B55600AB8675 /* HTHorizontalSelectionListScrollView.m */; };
 		6A30847E1FA1B87900AB8675 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A30847B1FA1B87900AB8675 /* UIImage+Color.m */; };
 		6A30847F1FA1B87900AB8675 /* UIImage+Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A30847D1FA1B87900AB8675 /* UIImage+Circle.m */; };
 		6A3084821FA1B8B800AB8675 /* UIView+FindUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084801FA1B8B700AB8675 /* UIView+FindUIViewController.m */; };
@@ -60,6 +58,8 @@
 		6A3084C61FA1D79A00AB8675 /* TBCityIconInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084C11FA1D79700AB8675 /* TBCityIconInfo.m */; };
 		6A3084C71FA1D79B00AB8675 /* UIImage+TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084C31FA1D79800AB8675 /* UIImage+TBCityIconFont.m */; };
 		6A3084C81FA1D79B00AB8675 /* TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3084C51FA1D79A00AB8675 /* TBCityIconFont.m */; };
+		6A47D81F1FA6F6810051B221 /* HTHorizontalSelectionListScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47D81B1FA6F6800051B221 /* HTHorizontalSelectionListScrollView.m */; };
+		6A47D8201FA6F6810051B221 /* HTHorizontalSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47D81C1FA6F6800051B221 /* HTHorizontalSelectionList.m */; };
 		6A47E0691FA300A10081D550 /* YYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47E0681FA300A10081D550 /* YYMessageViewController.m */; };
 		6A47E06C1FA306A20081D550 /* YYBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47E06B1FA306A20081D550 /* YYBaseNavigationController.m */; };
 		6A5F347F1FA6BA4E00FED9EF /* YYPesonalCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F347E1FA6BA4E00FED9EF /* YYPesonalCenterTableViewCell.m */; };
@@ -147,10 +147,6 @@
 		6A3084431FA1AF9D00AB8675 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		6A3084441FA1AF9D00AB8675 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		6A3084451FA1AF9D00AB8675 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		6A30846B1FA1B55600AB8675 /* HTHorizontalSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionList.h; sourceTree = "<group>"; };
-		6A30846C1FA1B55600AB8675 /* HTHorizontalSelectionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionList.m; sourceTree = "<group>"; };
-		6A30846D1FA1B55600AB8675 /* HTHorizontalSelectionListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionListScrollView.h; sourceTree = "<group>"; };
-		6A30846E1FA1B55600AB8675 /* HTHorizontalSelectionListScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListScrollView.m; sourceTree = "<group>"; };
 		6A30847A1FA1B87800AB8675 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		6A30847B1FA1B87900AB8675 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		6A30847C1FA1B87900AB8675 /* UIImage+Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Circle.h"; sourceTree = "<group>"; };
@@ -200,6 +196,10 @@
 		6A3084C31FA1D79800AB8675 /* UIImage+TBCityIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TBCityIconFont.m"; sourceTree = "<group>"; };
 		6A3084C41FA1D79900AB8675 /* TBCityIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityIconFont.h; sourceTree = "<group>"; };
 		6A3084C51FA1D79A00AB8675 /* TBCityIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityIconFont.m; sourceTree = "<group>"; };
+		6A47D81B1FA6F6800051B221 /* HTHorizontalSelectionListScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListScrollView.m; sourceTree = "<group>"; };
+		6A47D81C1FA6F6800051B221 /* HTHorizontalSelectionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionList.m; sourceTree = "<group>"; };
+		6A47D81D1FA6F6810051B221 /* HTHorizontalSelectionListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionListScrollView.h; sourceTree = "<group>"; };
+		6A47D81E1FA6F6810051B221 /* HTHorizontalSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionList.h; sourceTree = "<group>"; };
 		6A47E0671FA300A10081D550 /* YYMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYMessageViewController.h; sourceTree = "<group>"; };
 		6A47E0681FA300A10081D550 /* YYMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYMessageViewController.m; sourceTree = "<group>"; };
 		6A47E06A1FA306A20081D550 /* YYBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYBaseNavigationController.h; sourceTree = "<group>"; };
@@ -473,10 +473,10 @@
 		6A30845A1FA1B55600AB8675 /* HTHorizontalSelectionList */ = {
 			isa = PBXGroup;
 			children = (
-				6A30846B1FA1B55600AB8675 /* HTHorizontalSelectionList.h */,
-				6A30846C1FA1B55600AB8675 /* HTHorizontalSelectionList.m */,
-				6A30846D1FA1B55600AB8675 /* HTHorizontalSelectionListScrollView.h */,
-				6A30846E1FA1B55600AB8675 /* HTHorizontalSelectionListScrollView.m */,
+				6A47D81E1FA6F6810051B221 /* HTHorizontalSelectionList.h */,
+				6A47D81C1FA6F6800051B221 /* HTHorizontalSelectionList.m */,
+				6A47D81D1FA6F6810051B221 /* HTHorizontalSelectionListScrollView.h */,
+				6A47D81B1FA6F6800051B221 /* HTHorizontalSelectionListScrollView.m */,
 			);
 			path = HTHorizontalSelectionList;
 			sourceTree = "<group>";
@@ -814,6 +814,7 @@
 				6A3084851FA1B94800AB8675 /* UIViewController+runtime.m in Sources */,
 				6A47E0691FA300A10081D550 /* YYMessageViewController.m in Sources */,
 				6A3084C71FA1D79B00AB8675 /* UIImage+TBCityIconFont.m in Sources */,
+				6A47D8201FA6F6810051B221 /* HTHorizontalSelectionList.m in Sources */,
 				6A30844E1FA1AF9D00AB8675 /* MJRefreshBackGifFooter.m in Sources */,
 				6A30848A1FA1B98E00AB8675 /* UIView+Size.m in Sources */,
 				6A30844B1FA1AF9D00AB8675 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -832,9 +833,9 @@
 				6A3084AC1FA1BAE400AB8675 /* YYDeviceInfo.m in Sources */,
 				6A3084A91FA1BABE00AB8675 /* YYGlobal.m in Sources */,
 				6A3083F31FA1899F00AB8675 /* YYHomePageViewController.m in Sources */,
+				6A47D81F1FA6F6810051B221 /* HTHorizontalSelectionListScrollView.m in Sources */,
 				6A3083F61FA189BC00AB8675 /* YYInvestmentViewController.m in Sources */,
 				6A30848E1FA1B9B800AB8675 /* UIButton+Block.m in Sources */,
-				6A3084781FA1B55600AB8675 /* HTHorizontalSelectionListScrollView.m in Sources */,
 				6A3084991FA1BA0E00AB8675 /* NSMutableSet+safe.m in Sources */,
 				6A3084511FA1AF9D00AB8675 /* MJRefreshGifHeader.m in Sources */,
 				6A3084491FA1AF9D00AB8675 /* MJRefreshFooter.m in Sources */,
@@ -848,7 +849,6 @@
 				6A30849A1FA1BA0E00AB8675 /* NSMutableDictionary+safe.m in Sources */,
 				6A3084BC1FA1C08000AB8675 /* YYWebViewController.m in Sources */,
 				6A3084C81FA1D79B00AB8675 /* TBCityIconFont.m in Sources */,
-				6A3084771FA1B55600AB8675 /* HTHorizontalSelectionList.m in Sources */,
 				6A3084B51FA1BEF400AB8675 /* NJKWebViewProgressView.m in Sources */,
 				6A3084481FA1AF9D00AB8675 /* MJRefreshComponent.m in Sources */,
 				6A5F34851FA6CE4300FED9EF /* YYSignInViewController.m in Sources */,

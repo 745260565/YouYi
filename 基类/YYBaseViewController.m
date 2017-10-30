@@ -35,8 +35,8 @@
     [super viewDidLoad];
     NSLog(@"LFC: viewDidLoad: %@", self);
     self.navigationController.delegate = self;
-    self.view.backgroundColor = MainColor;
     self.headerView = [[UIView alloc] init];
+    self.headerView.backgroundColor = MainColor;
     [self.view addSubview:self.headerView];
     [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
@@ -86,7 +86,7 @@
     messageButton.hidden = !self.isBasePage;
     
     self.contentView = [UIView new];
-    self.contentView.backgroundColor = WhiteColor;
+    self.contentView.backgroundColor = [UIColor getColor:@"eeeeee"];
     [self.view addSubview:self.contentView];
     
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -29,7 +29,7 @@
 #define kHTHorizontalSelectionListHorizontalMargin 0
 #define kHTHorizontalSelectionListInternalPadding 0
 
-#define kHTHorizontalSelectionListSelectionIndicatorHeight 5
+#define kHTHorizontalSelectionListSelectionIndicatorHeight 3
 
 #define kHTHorizontalSelectionListTrimHeight 0.5
 
@@ -301,10 +301,8 @@
         [button setTitleColor:self.buttonColorsByState[controlState] forState:controlState.integerValue];
     }
 
-    button.titleLabel.font = [UIFont systemFontOfSize:20];
- //   button.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+    button.titleLabel.font = [UIFont systemFontOfSize:LengthInIP6(15)];
     [button sizeToFit];
- //   button.width = 48;
 
     if (self.selectionIndicatorStyle == HTHorizontalSelectionIndicatorStyleButtonBorder) {
         button.layer.borderWidth = 1.0;
