@@ -11,10 +11,11 @@
 #import "YYClientInfo.h"
 
 @interface YYGlobal : NSObject
-@property(nonatomic,strong)NSString *token;
-@property(nonatomic,strong)NSString *userId;
-@property(nonatomic,strong)YYDeviceInfo *deviceInfo;
-@property(nonatomic,strong)YYClientInfo *clientInfo;
+@property(nonatomic, strong) NSString *token;
+@property(nonatomic, strong) NSString *userId;
+@property(nonatomic, strong) YYDeviceInfo *deviceInfo;
+@property(nonatomic, strong) YYClientInfo *clientInfo;
+
 //加一个登录后的对象
 @property(nonatomic, assign) BOOL showWelcomePage;
 +(instancetype)sharedInstance;

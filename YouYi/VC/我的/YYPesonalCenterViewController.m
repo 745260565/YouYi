@@ -7,19 +7,31 @@
 //
 
 #import "YYPesonalCenterViewController.h"
+#import "YYPesonalCenterTableViewCell.h"
+#import "YYSignInViewController.h"
+#import "YYSingUpViewController.h"
 
 @interface YYPesonalCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
-
+@property (nonatomic, strong) NSArray *colorArray;
+@property (nonatomic, strong) NSArray *titleArray;
+@property (nonatomic, strong) NSArray *iconArray;
 @end
 
 @implementation YYPesonalCenterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initData];
     [self setHeaderViewHeight:LengthInIP6(140)];
     [self initWithHeaderView];
     [self initWithTableView];
     // Do any additional setup after loading the view.
+}
+
+- (void)initData{
+    self.colorArray = @[@"e95c16",@"86c600",@"f8c82e",@"3ac8bc",@"9b8672"];
+    self.titleArray = @[@"资金明细",@"新手指南",@"专属客服",@"邀请好友",@"设置"];
+    self.iconArray = @[@"\U0000e617",@"\U0000e6ae",@"\U0000e63d",@"\U0000e616",@"\U0000e69b"];
 }
 
 - (void)initWithHeaderView{
@@ -87,52 +99,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"personalCenterTableViewCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    YYPesonalCenterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[YYPesonalCenterTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    switch (indexPath.section) {
-        case 0:
-            {
-                cell.textLabel.text = @"资金明细";
-                cell.imageView.image = ICONFONT(@"\U0000e617", LengthInIP6(24), WhiteColor);
-                cell.imageView.backgroundColor = [UIColor getColor:@"e95c16"];
-            }
-            break;
-        case 1:
-        {
-            if (indexPath.row == 0) {
-                cell.textLabel.text = @"新手指南";
-                
-            }else{
-                cell.textLabel.text = @"专属客服";
-            }
-        }
-            break;
-        case 2:
-        {
-            if (indexPath.row == 1) {
-                cell.textLabel.text = @"邀请好友";
-            }else{
-                cell.textLabel.text = @"设置";
-            }
-        }
-            break;
-        default:
-            break;
-    }
+    
+    NSInteger index = (indexPath.section == 2)?indexPath.section+1+indexPath.row:indexPath.row+indexPath.section;
+    [cell updateWithImage:ICONFONT(self.iconArray[index], 14, WhiteColor) backgroundColorString:self.colorArray[index] title:self.titleArray[index]];
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 3;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 2;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    YYSignInViewController *signInVC = [[YYSignInViewController alloc] init];
+    [self.navigationController pushViewController:signInVC animated:YES];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

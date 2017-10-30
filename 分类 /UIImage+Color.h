@@ -14,4 +14,8 @@
 
 - (UIImage *)imageWithScale:(CGFloat)scale;
 
+//创建纯色图片
++(UIImage *)createColorImg:(NSString *)hexColor alpha:(CGFloat)alpha;
++(UIImage *)createColorImg:(NSString *)hexColor;
+
 @end

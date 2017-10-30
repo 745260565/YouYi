@@ -24,6 +24,18 @@ static YYGlobal *sharedObj = nil;
     return sharedObj;
 }
 
+- (NSString*)token{
+    NSString *token= [[NSUserDefaults standardUserDefaults] valueForKey:@"token"];
+    return token;
+}
 
+-(void)setToken:(NSString *)token{
+    if (token!=nil) {
+        [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"token"];
+    }else{
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 @end

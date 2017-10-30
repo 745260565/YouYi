@@ -12,7 +12,5 @@
 // 将十六进制的颜色值转为objective-c的颜色
 + (UIColor *)getColor:(NSString *) hexColor;
 + (UIColor *)getColor:(NSString *) hexColor alpha:(CGFloat)alpha;
-//创建纯色图片
-+(UIImage *)createColorImg:(NSString *)hexColor alpha:(CGFloat)alpha;
-+(UIImage *)createColorImg:(NSString *)hexColor;
+
 @end
