@@ -67,8 +67,9 @@
     [personalCenterTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
-    personalCenterTableView.backgroundColor = [UIColor grayColor];
+    personalCenterTableView.backgroundColor = [UIColor getColor:@"eeeeee"];
     personalCenterTableView.delegate = self;
+    personalCenterTableView.dataSource = self;
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
@@ -90,8 +91,45 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = @"123";
+    switch (indexPath.section) {
+        case 0:
+            {
+                cell.textLabel.text = @"资金明细";
+                cell.imageView.image = ICONFONT(@"\U0000e617", LengthInIP6(24), WhiteColor);
+                cell.imageView.backgroundColor = [UIColor getColor:@"e95c16"];
+            }
+            break;
+        case 1:
+        {
+            if (indexPath.row == 0) {
+                cell.textLabel.text = @"新手指南";
+                
+            }else{
+                cell.textLabel.text = @"专属客服";
+            }
+        }
+            break;
+        case 2:
+        {
+            if (indexPath.row == 1) {
+                cell.textLabel.text = @"邀请好友";
+            }else{
+                cell.textLabel.text = @"设置";
+            }
+        }
+            break;
+        default:
+            break;
+    }
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 2;
 }
 
 

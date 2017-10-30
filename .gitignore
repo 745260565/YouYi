@@ -1,8 +1,7 @@
 *.xcuserstate
-YouYi.xcworkspace
 xcuserdata
 UserInterfaceState.xcuserstate
-YouYi.xcworkspace/
 YouYi.xcodeproj/project.xcworkspace/xcuserdata
 xcuserdata/
 YouYi.xcodeproj/xcuserdata/
+.DS_Store
