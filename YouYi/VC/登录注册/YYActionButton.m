@@ -19,11 +19,21 @@
 }
 
 - (void)initUI{
-    
+    self.layer.masksToBounds = YES;
+    self.clipsToBounds = YES;
+    self.layer.cornerRadius = 3;
+    [self setTitleColor:WhiteColor forState:UIControlStateNormal];
+    self.backgroundColor = [UIColor grayColor];
+    self.enabled = NO;
 }
 
 - (void)setEnabled:(BOOL)enabled{
     YYLog(@"actionButtonEnable");
+    if (enabled) {
+        self.backgroundColor = MainColor;
+    }else{
+        self.backgroundColor = [UIColor grayColor];
+    }
 }
 
 /*

@@ -67,6 +67,7 @@
 		6A5F34881FA6CE5100FED9EF /* YYSingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F34871FA6CE5100FED9EF /* YYSingUpViewController.m */; };
 		6A7C35B71FA8181B00F277F5 /* YYGetVerificationCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C35B61FA8181B00F277F5 /* YYGetVerificationCodeButton.m */; };
 		6A7C35BA1FA8329400F277F5 /* YYActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C35B91FA8329400F277F5 /* YYActionButton.m */; };
+		6A7C35BD1FA85B6700F277F5 /* YYSetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C35BC1FA85B6700F277F5 /* YYSetPasswordViewController.m */; };
 		6AD9789F1FA0859D009D66AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9789E1FA0859D009D66AD /* AppDelegate.m */; };
 		6AD978A71FA0859D009D66AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AD978A61FA0859D009D66AD /* Assets.xcassets */; };
 		6AD978AA1FA0859D009D66AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD978A81FA0859D009D66AD /* LaunchScreen.storyboard */; };
@@ -216,6 +217,8 @@
 		6A7C35B61FA8181B00F277F5 /* YYGetVerificationCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYGetVerificationCodeButton.m; sourceTree = "<group>"; };
 		6A7C35B81FA8329400F277F5 /* YYActionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYActionButton.h; sourceTree = "<group>"; };
 		6A7C35B91FA8329400F277F5 /* YYActionButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYActionButton.m; sourceTree = "<group>"; };
+		6A7C35BB1FA85B6700F277F5 /* YYSetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYSetPasswordViewController.h; sourceTree = "<group>"; };
+		6A7C35BC1FA85B6700F277F5 /* YYSetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYSetPasswordViewController.m; sourceTree = "<group>"; };
 		6AD9789A1FA0859D009D66AD /* YouYi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouYi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD9789D1FA0859D009D66AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6AD9789E1FA0859D009D66AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -377,6 +380,8 @@
 				6A5F34841FA6CE4300FED9EF /* YYSignInViewController.m */,
 				6A5F34861FA6CE5100FED9EF /* YYSingUpViewController.h */,
 				6A5F34871FA6CE5100FED9EF /* YYSingUpViewController.m */,
+				6A7C35BB1FA85B6700F277F5 /* YYSetPasswordViewController.h */,
+				6A7C35BC1FA85B6700F277F5 /* YYSetPasswordViewController.m */,
 				6A7C35B51FA8181B00F277F5 /* YYGetVerificationCodeButton.h */,
 				6A7C35B61FA8181B00F277F5 /* YYGetVerificationCodeButton.m */,
 				6A7C35B81FA8329400F277F5 /* YYActionButton.h */,
@@ -830,6 +835,7 @@
 				6A30848A1FA1B98E00AB8675 /* UIView+Size.m in Sources */,
 				6A30844B1FA1AF9D00AB8675 /* MJRefreshAutoGifFooter.m in Sources */,
 				6A3084521FA1AF9D00AB8675 /* MJRefreshNormalHeader.m in Sources */,
+				6A7C35BD1FA85B6700F277F5 /* YYSetPasswordViewController.m in Sources */,
 				6A3084A31FA1BA4700AB8675 /* EDCryptoUtil.m in Sources */,
 				6A3084571FA1AF9D00AB8675 /* UIScrollView+MJExtension.m in Sources */,
 				6A2B14E91FA1E28C00EF5C9C /* KeychainWrapper.m in Sources */,

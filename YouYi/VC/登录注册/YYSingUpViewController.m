@@ -8,12 +8,14 @@
 
 #import "YYSingUpViewController.h"
 #import "YYGetVerificationCodeButton.h"
+#import "YYActionButton.h"
+#import "YYSetPasswordViewController.h"
 
-@interface YYSingUpViewController ()
+@interface YYSingUpViewController ()<UITextFieldDelegate>
 @property (nonatomic, strong) UITextField *phoneNumberTextField;
 @property (nonatomic, strong) UITextField *verificationCodeTextField;
 @property (nonatomic, strong) YYGetVerificationCodeButton *getVerficationCodeButton;
-@property (nonatomic, strong) UIButton *userAgreementButton;
+@property (nonatomic, strong) YYActionButton *nextButton;
 @end
 
 @implementation YYSingUpViewController
@@ -26,6 +28,9 @@
 }
 
 - (void)initUI{
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTap)];
+    [self.contentView addGestureRecognizer:tapGes];
+    
     UIView *signUpView = [[UIView alloc] init];
     signUpView.backgroundColor = WhiteColor;
     [self.contentView addSubview:signUpView];
@@ -72,6 +77,8 @@
     self.phoneNumberTextField.placeholder = @"请输入手机号";
     self.phoneNumberTextField.font = [UIFont systemFontOfSize:MFont];
     self.phoneNumberTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.phoneNumberTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.phoneNumberTextField.delegate = self;
     [signUpView addSubview:self.phoneNumberTextField];
     [self.phoneNumberTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(phoneNumberLabel.mas_right).mas_offset(LengthInIP6(30));
@@ -93,6 +100,8 @@
     self.verificationCodeTextField = [[UITextField alloc] init];
     self.verificationCodeTextField.placeholder = @"请输入验证码";
     self.verificationCodeTextField.font = [UIFont systemFontOfSize:MFont];
+    self.verificationCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.verificationCodeTextField.delegate = self;
     [signUpView addSubview:self.verificationCodeTextField];
     [self.verificationCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(verificationCodeLabel.mas_right).mas_offset(LengthInIP6(30));
@@ -101,12 +110,12 @@
         make.top.mas_equalTo(CellHeight);
     }];
     
-    self.userAgreementButton = [[UIButton alloc] init];
-    [self.userAgreementButton setImage:ICONFONT(@"\U0000e606", 20, MainColor) forState:UIControlStateNormal];
-    [self.userAgreementButton setImage:ICONFONT(@"\U0000e63b", 20, MainColor) forState:UIControlStateSelected];
-    [self.contentView addSubview:self.userAgreementButton];
-    [self.userAgreementButton addTarget:self action:@selector(userAgreementAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.userAgreementButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *userAgreementButton = [[UIButton alloc] init];
+    [userAgreementButton setImage:ICONFONT(@"\U0000e606", 20, MainColor) forState:UIControlStateNormal];
+    [userAgreementButton setImage:ICONFONT(@"\U0000e63b", 20, MainColor) forState:UIControlStateSelected];
+    [self.contentView addSubview:userAgreementButton];
+    [userAgreementButton addTarget:self action:@selector(userAgreementAction:) forControlEvents:UIControlEventTouchUpInside];
+    [userAgreementButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(BaseInterval);
         make.top.mas_equalTo(signUpView.mas_bottom).mas_offset(BaseInterval);
     }];
@@ -116,8 +125,8 @@
     messageLabel.font = [UIFont systemFontOfSize:SFont];
     [self.contentView addSubview:messageLabel];
     [messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.userAgreementButton.mas_right).mas_offset(5);
-        make.centerY.mas_equalTo(self.userAgreementButton.mas_centerY);
+        make.left.mas_equalTo(userAgreementButton.mas_right).mas_offset(5);
+        make.centerY.mas_equalTo(userAgreementButton.mas_centerY);
     }];
     
     UIButton *userAgreementWordButton = [[UIButton alloc] init];
@@ -127,17 +136,54 @@
     [self.contentView addSubview:userAgreementWordButton];
     [userAgreementWordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(messageLabel.mas_right);
-        make.centerY.mas_equalTo(self.userAgreementButton.mas_centerY);
+        make.centerY.mas_equalTo(userAgreementButton.mas_centerY);
     }];
     
+    self.nextButton = [[YYActionButton alloc] init];
+    [self.nextButton setTitle:@"下一步" forState:UIControlStateNormal];
+    [self.nextButton addTarget:self action:@selector(nextButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:self.nextButton];
+    [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(BaseInterval);
+        make.right.mas_equalTo(-BaseInterval);
+        make.top.mas_equalTo(userAgreementButton.mas_bottom).mas_offset(LengthInIP6(30));
+        make.height.mas_equalTo(CellHeight);
+    }];
+    
+}
+
+- (void)contentViewTap{
+    [self.view endEditing:YES];
 }
 
 - (void)sendVerificationCode:(UIButton*)sender{
     
 }
 
+- (void)nextButtonAction:(UIButton*)sender{
+    YYSetPasswordViewController *spVC = [[YYSetPasswordViewController alloc] initWithType:SetPasswordTypeSignUp];
+    [self.navigationController pushViewController:spVC animated:YES];
+}
+
 - (void)userAgreementAction:(UIButton*)sender{
     sender.selected = !sender.selected;
+}
+
+- (void)reloadTextFieldStatus{
+    if (self.phoneNumberTextField.text.length>0 && self.verificationCodeTextField.text.length>0) {
+        self.nextButton.enabled = YES;
+    }else{
+        self.nextButton.enabled = NO;
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self reloadTextFieldStatus];
+    });
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

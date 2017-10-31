@@ -16,9 +16,15 @@
 @property (nonatomic, strong) HTHorizontalSelectionList *signInTitle;
 @property (nonatomic, strong) NSArray *signInTitleArray;
 @property (nonatomic, strong) UIScrollView *contentScrollerView;
-@property (nonatomic, strong) UITextField *passwordTextField;
+@property (nonatomic, strong) UITextField *accountTextField;//用户名
+@property (nonatomic, strong) UITextField *passwordTextField;//密码
+@property (nonatomic, strong) UITextField *phoneNumberTextField;//手机号
+@property (nonatomic, strong) UITextField *verificationCodeTextField;//验诈码
+
 @property (nonatomic, assign) BOOL secureState;
 @property (nonatomic, strong) YYGetVerificationCodeButton *verificationCodeButton;
+@property (nonatomic, strong) YYActionButton *signinButton1;
+@property (nonatomic, strong) YYActionButton *signinButton2;
 @end
 
 @implementation YYSignInViewController
@@ -135,13 +141,14 @@
     }];
     
     //输入框
-    UITextField *accountTextField = [[UITextField alloc] init];
-    accountTextField.placeholder = @"请输入优易网帐号";
-    accountTextField.font = [UIFont systemFontOfSize:MFont];
-    accountTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    accountTextField.tag = 1;
-    [signInView addSubview:accountTextField];
-    [accountTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.accountTextField = [[UITextField alloc] init];
+    self.accountTextField.placeholder = @"请输入优易网帐号";
+    self.accountTextField.font = [UIFont systemFontOfSize:MFont];
+    self.accountTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.accountTextField.tag = 1;
+    self.accountTextField.delegate = self;
+    [signInView addSubview:self.accountTextField];
+    [self.accountTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(accountLabel.mas_right).mas_offset(LengthInIP6(30));
         make.right.mas_equalTo(phoneNumberLabel.mas_left).mas_offset(-BaseInterval);
         make.centerY.mas_equalTo(accountLabel.mas_centerY);
@@ -165,6 +172,7 @@
     self.passwordTextField.secureTextEntry = self.secureState;
     self.passwordTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
     self.passwordTextField.tag = 2;
+    self.passwordTextField.delegate = self;
     [signInView addSubview:self.passwordTextField];
     [self.passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(passwordLabel.mas_right).mas_offset(LengthInIP6(30));
@@ -173,14 +181,15 @@
         make.height.mas_equalTo(CellHeight);
     }];
     
-    UITextField *phoneNumberTextField = [[UITextField alloc] init];
-    phoneNumberTextField.font = [UIFont systemFontOfSize:MFont];
-    phoneNumberTextField.placeholder = @"请输入手机号";
-    phoneNumberTextField.keyboardType = UIKeyboardTypeNumberPad;
-    phoneNumberTextField.tag = 3;
-    phoneNumberTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [signInView addSubview:phoneNumberTextField];
-    [phoneNumberTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.phoneNumberTextField = [[UITextField alloc] init];
+    self.phoneNumberTextField.font = [UIFont systemFontOfSize:MFont];
+    self.phoneNumberTextField.placeholder = @"请输入手机号";
+    self.phoneNumberTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.phoneNumberTextField.tag = 3;
+    self.phoneNumberTextField.delegate = self;
+    self.phoneNumberTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [signInView addSubview:self.phoneNumberTextField];
+    [self.phoneNumberTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(phoneNumberLabel.mas_right).mas_offset(LengthInIP6(30));
         make.right.mas_equalTo(-BaseInterval);
         make.centerY.mas_equalTo(phoneNumberLabel.mas_centerY);
@@ -197,13 +206,14 @@
         make.width.mas_equalTo(MFont*6);
     }];
     
-    UITextField *verificationCodeTextField = [[UITextField alloc] init];
-    verificationCodeTextField.font = [UIFont systemFontOfSize:MFont];
-    verificationCodeTextField.placeholder = @"请输入验证码";
-    verificationCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
-    verificationCodeTextField.tag = 4;
-    [signInView addSubview:verificationCodeTextField];
-    [verificationCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.verificationCodeTextField = [[UITextField alloc] init];
+    self.verificationCodeTextField.font = [UIFont systemFontOfSize:MFont];
+    self.verificationCodeTextField.placeholder = @"请输入验证码";
+    self.verificationCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.verificationCodeTextField.tag = 4;
+    self.verificationCodeTextField.delegate = self;
+    [signInView addSubview:self.verificationCodeTextField];
+    [self.verificationCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(verificationCodeLabel.mas_right).mas_offset(LengthInIP6(30));
         make.centerY.mas_equalTo(verificationCodeLabel.mas_centerY);
         make.right.mas_equalTo(self.verificationCodeButton.mas_left).mas_equalTo(-BaseInterval);
@@ -211,28 +221,22 @@
     }];
     
     //按钮
-    UIButton *signinButton1 = [[UIButton alloc] init];
-    [signinButton1 setTitleColor:MainColor forState:UIControlStateNormal];
-    [signinButton1 setTitle:@"登录" forState:UIControlStateNormal];
-    signinButton1.backgroundColor = MainColor;
-    [signinButton1 setTitleColor:WhiteColor forState:UIControlStateNormal];
-    [signinButton1 addTarget:self action:@selector(signInAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentScrollerView addSubview:signinButton1];
-    [signinButton1 mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.signinButton1 = [[YYActionButton alloc] init];
+    [self.signinButton1 setTitle:@"登录" forState:UIControlStateNormal];
+    [self.signinButton1 addTarget:self action:@selector(signInAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentScrollerView addSubview:self.signinButton1];
+    [self.signinButton1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(BaseInterval);
         make.width.mas_equalTo(ScreenWidth-BaseInterval*2);
         make.top.mas_equalTo(signInView.mas_bottom).mas_offset(LengthInIP6(20));
         make.height.mas_equalTo(CellHeight);
     }];
     
-    UIButton *signinButton2 = [[UIButton alloc] init];
-    [signinButton2 setTitleColor:MainColor forState:UIControlStateNormal];
-    [signinButton2 setTitle:@"登录" forState:UIControlStateNormal];
-    signinButton2.backgroundColor = MainColor;
-    [signinButton2 setTitleColor:WhiteColor forState:UIControlStateNormal];
-    [signinButton2 addTarget:self action:@selector(signInAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentScrollerView addSubview:signinButton2];
-    [signinButton2 mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.signinButton2 = [[YYActionButton alloc] init];
+    [self.signinButton2 setTitle:@"登录" forState:UIControlStateNormal];
+    [self.signinButton2 addTarget:self action:@selector(signInAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentScrollerView addSubview:self.signinButton2];
+    [self.signinButton2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(ScreenWidth + BaseInterval);
         make.width.mas_equalTo(ScreenWidth-BaseInterval*2);
         make.top.mas_equalTo(signInView.mas_bottom).mas_offset(LengthInIP6(20));
@@ -246,8 +250,8 @@
     [signUpButton1 addTarget:self action:@selector(signUpAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentScrollerView addSubview:signUpButton1];
     [signUpButton1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(signinButton1.mas_bottom).mas_offset(10);
-        make.left.mas_equalTo(signinButton1.mas_left);
+        make.top.mas_equalTo(self.signinButton1.mas_bottom).mas_offset(10);
+        make.left.mas_equalTo(self.signinButton1.mas_left);
         make.width.mas_equalTo(SFont*7);
         make.height.mas_equalTo(MFont);
     }];
@@ -259,8 +263,8 @@
     [signUpButton2 addTarget:self action:@selector(signUpAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentScrollerView addSubview:signUpButton2];
     [signUpButton2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(signinButton2.mas_bottom).mas_offset(10);
-        make.left.mas_equalTo(signinButton2.mas_left);
+        make.top.mas_equalTo(self.signinButton2.mas_bottom).mas_offset(10);
+        make.left.mas_equalTo(self.signinButton2.mas_left);
         make.width.mas_equalTo(SFont*7);
         make.height.mas_equalTo(MFont);
     }];
@@ -272,8 +276,8 @@
     [forgetPasswordButton addTarget:self action:@selector(forgetPasswordAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentScrollerView addSubview:forgetPasswordButton];
     [forgetPasswordButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(signinButton1.mas_right);
-        make.top.mas_equalTo(signinButton1.mas_bottom).mas_offset(10);
+        make.right.mas_equalTo(self.signinButton1.mas_right);
+        make.top.mas_equalTo(self.signinButton1.mas_bottom).mas_offset(10);
         make.width.mas_equalTo(SFont*6);
         make.height.mas_equalTo(MFont);
     }];
@@ -305,8 +309,27 @@
     
 }
 
+- (void)reloadTextFieldStatus{
+    if (self.accountTextField.text.length>0 && self.passwordTextField.text.length>0) {
+        self.signinButton1.enabled = YES;
+    }else{
+        self.signinButton1.enabled = NO;
+    }
+    if (self.phoneNumberTextField.text.length>0 && self.verificationCodeTextField.text.length>0) {
+        self.signinButton2.enabled = YES;
+    }else{
+        self.signinButton2.enabled = NO;
+    }
+}
+
 #pragma mark - UITextFieldDelegate
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self reloadTextFieldStatus];
+    });
+    return YES;
+}
 
 #pragma mark - HTHorizontalSelectionListDataSource Protocol Methods
 

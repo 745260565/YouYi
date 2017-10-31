@@ -87,8 +87,6 @@
     
     self.contentView = [UIView new];
     self.contentView.backgroundColor = BaseBackgroundColor;
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTap)];
-    [self.contentView addGestureRecognizer:tapGes];
     [self.view addSubview:self.contentView];
     
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -101,10 +99,6 @@
     self.view.clipsToBounds = YES;
     
     // Do any additional setup after loading the view.
-}
-
-- (void)contentViewTap{
-    [self.view endEditing:YES];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
