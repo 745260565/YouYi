@@ -35,6 +35,13 @@
 
 #define ICONFONT(iconfontCode, imageSize, imageColor) [UIImage iconWithInfo:TBCityIconInfoMake(iconfontCode, imageSize, imageColor)]
 
+//输入框文本框边距.字体大小
+#define BaseInterval 10
+#define SFont LengthInIP6(12)
+#define MFont LengthInIP6(14)
+#define LFont LengthInIP6(16)
+#define CellHeight 44
+
 // 弱引用/强引用
 #define weakify_self   __weak typeof(self) weakSelf = self;
 #define strongify_self __strong typeof(self) self = weakSelf;
@@ -82,9 +89,9 @@ return __singleton__; \
 
 //测试的时候打印语句，发布程序的时候自动去除打印语句
 #ifdef DEBUG
-#define NSLog(...) NSLog(__VA_ARGS__)
+#define YYLog(...) NSLog(__VA_ARGS__)
 #else
-#define NSLog(...) {if(INHouse) NSLog(__VA_ARGS__);}
+#define YYLog(...) {if(INHouse) NSLog(__VA_ARGS__);}
 #endif
 
 //屏幕宽高
@@ -112,6 +119,7 @@ alpha:a]
 #define MainColor [UIColor orangeColor]
 #define WhiteColor [UIColor whiteColor]
 #define BlackColor [UIColor blackColor]
+#define BaseBackgroundColor [UIColor getColor:@"eeeeee"]
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

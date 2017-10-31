@@ -301,7 +301,7 @@
         [button setTitleColor:self.buttonColorsByState[controlState] forState:controlState.integerValue];
     }
 
-    button.titleLabel.font = [UIFont systemFontOfSize:LengthInIP6(15)];
+    button.titleLabel.font = [UIFont systemFontOfSize:LengthInIP6(16)];
     [button sizeToFit];
 
     if (self.selectionIndicatorStyle == HTHorizontalSelectionIndicatorStyleButtonBorder) {

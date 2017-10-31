@@ -57,6 +57,7 @@
     UIButton *loginButton = [[UIButton alloc] init];
     [loginButton setImage:ICONFONT(@"\U0000e6a6", LengthInIP6(20), [UIColor getColor:@"fedf32"]) forState:UIControlStateNormal];
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
+    [loginButton addTarget:self action:@selector(pushToSignIn) forControlEvents:UIControlEventTouchUpInside];
     [self.headerView addSubview:loginButton];
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(offlinePersonalCenterImageView.mas_centerY);
@@ -66,6 +67,7 @@
     UIButton *registerButton = [[UIButton alloc] init];
     [registerButton setImage:ICONFONT(@"\U0000e697", LengthInIP6(20), [UIColor getColor:@"fedf32"]) forState:UIControlStateNormal];
     [registerButton setTitle:@"注册" forState:UIControlStateNormal];
+    [registerButton addTarget:self action:@selector(pushToSignUp) forControlEvents:UIControlEventTouchUpInside];
     [self.headerView addSubview:registerButton];
     [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(offlinePersonalCenterImageView.mas_centerY);
@@ -79,9 +81,19 @@
     [personalCenterTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
-    personalCenterTableView.backgroundColor = [UIColor getColor:@"eeeeee"];
+    personalCenterTableView.backgroundColor = BaseBackgroundColor;
     personalCenterTableView.delegate = self;
     personalCenterTableView.dataSource = self;
+}
+
+- (void)pushToSignIn{
+    YYSignInViewController *signInVC = [[YYSignInViewController alloc] init];
+    [self.navigationController pushViewController:signInVC animated:YES];
+}
+
+- (void)pushToSignUp{
+    YYSingUpViewController *signInVC = [[YYSingUpViewController alloc] init];
+    [self.navigationController pushViewController:signInVC animated:YES];
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
@@ -110,12 +122,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
+    return CellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    YYSignInViewController *signInVC = [[YYSignInViewController alloc] init];
-    [self.navigationController pushViewController:signInVC animated:YES];
+    [self pushToSignIn];
 }
 
 - (void)didReceiveMemoryWarning {
