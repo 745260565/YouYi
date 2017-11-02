@@ -9,6 +9,7 @@
 #import "YYSignInViewController.h"
 #import "HTHorizontalSelectionList.h"
 #import "YYSingUpViewController.h"
+#import "YYForgetPasswordViewController.h"
 #import "YYGetVerificationCodeButton.h"
 #import "YYActionButton.h"
 
@@ -306,7 +307,8 @@
 }
 
 - (void)forgetPasswordAction:(UIButton*)sender{
-    
+    YYForgetPasswordViewController *forgetPasswordVC = [[YYForgetPasswordViewController alloc] init];
+    [self.navigationController pushViewController:forgetPasswordVC animated:YES];
 }
 
 - (void)reloadTextFieldStatus{

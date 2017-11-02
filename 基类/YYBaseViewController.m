@@ -148,6 +148,17 @@
     self.titleLabel.text = title;
 }
 
+- (void)setCommandKeyboard:(BOOL)commandKeyboard{
+    if (commandKeyboard) {
+        UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTap)];
+        [self.contentView addGestureRecognizer:tapGes];
+    }
+}
+
+- (void)contentViewTap{
+    [self.view endEditing:YES];
+}
+
 - (void)popBack
 {
     NSLog(@"YYbaseVC popback");

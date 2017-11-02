@@ -15,6 +15,7 @@
 @property(nonatomic, strong)UIButton *backBtn;
 @property(nonatomic)BOOL hiddenTabBarWhenPushed;
 @property(nonatomic)BOOL isLoading;
+@property(nonatomic)BOOL commandKeyboard;//在base中控制放下键盘，默认是NO
 
 - (instancetype)initWithTabBarTitle:(NSString*)titleString tabBarImageName:(NSString*)imageName;
 

@@ -23,13 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"注册";
+    self.commandKeyboard = YES;
     [self initUI];
     // Do any additional setup after loading the view.
 }
 
 - (void)initUI{
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTap)];
-    [self.contentView addGestureRecognizer:tapGes];
+//    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTap)];
+//    [self.contentView addGestureRecognizer:tapGes];
     
     UIView *signUpView = [[UIView alloc] init];
     signUpView.backgroundColor = WhiteColor;
@@ -152,9 +153,9 @@
     
 }
 
-- (void)contentViewTap{
-    [self.view endEditing:YES];
-}
+//- (void)contentViewTap{
+//    [self.view endEditing:YES];
+//}
 
 - (void)sendVerificationCode:(UIButton*)sender{
     

@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.contentType?@"修改密码":@"设置密码";
+    self.commandKeyboard = YES;
     [self initUI];
     // Do any additional setup after loading the view.
 }

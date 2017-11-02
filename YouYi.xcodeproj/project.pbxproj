@@ -65,6 +65,8 @@
 		6A5F347F1FA6BA4E00FED9EF /* YYPesonalCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F347E1FA6BA4E00FED9EF /* YYPesonalCenterTableViewCell.m */; };
 		6A5F34851FA6CE4300FED9EF /* YYSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F34841FA6CE4300FED9EF /* YYSignInViewController.m */; };
 		6A5F34881FA6CE5100FED9EF /* YYSingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F34871FA6CE5100FED9EF /* YYSingUpViewController.m */; };
+		6A5F597A1FA95CCE006DDFD2 /* YYForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F59791FA95CCE006DDFD2 /* YYForgetPasswordViewController.m */; };
+		6A5F597E1FA96C20006DDFD2 /* YYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F597D1FA96C20006DDFD2 /* YYSettingViewController.m */; };
 		6A7C35B71FA8181B00F277F5 /* YYGetVerificationCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C35B61FA8181B00F277F5 /* YYGetVerificationCodeButton.m */; };
 		6A7C35BA1FA8329400F277F5 /* YYActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C35B91FA8329400F277F5 /* YYActionButton.m */; };
 		6A7C35BD1FA85B6700F277F5 /* YYSetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C35BC1FA85B6700F277F5 /* YYSetPasswordViewController.m */; };
@@ -213,6 +215,10 @@
 		6A5F34841FA6CE4300FED9EF /* YYSignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYSignInViewController.m; sourceTree = "<group>"; };
 		6A5F34861FA6CE5100FED9EF /* YYSingUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYSingUpViewController.h; sourceTree = "<group>"; };
 		6A5F34871FA6CE5100FED9EF /* YYSingUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYSingUpViewController.m; sourceTree = "<group>"; };
+		6A5F59781FA95CCE006DDFD2 /* YYForgetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYForgetPasswordViewController.h; sourceTree = "<group>"; };
+		6A5F59791FA95CCE006DDFD2 /* YYForgetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYForgetPasswordViewController.m; sourceTree = "<group>"; };
+		6A5F597C1FA96C20006DDFD2 /* YYSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYSettingViewController.h; sourceTree = "<group>"; };
+		6A5F597D1FA96C20006DDFD2 /* YYSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYSettingViewController.m; sourceTree = "<group>"; };
 		6A7C35B51FA8181B00F277F5 /* YYGetVerificationCodeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYGetVerificationCodeButton.h; sourceTree = "<group>"; };
 		6A7C35B61FA8181B00F277F5 /* YYGetVerificationCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYGetVerificationCodeButton.m; sourceTree = "<group>"; };
 		6A7C35B81FA8329400F277F5 /* YYActionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYActionButton.h; sourceTree = "<group>"; };
@@ -319,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				6A3083EA1FA187D700AB8675 /* 登录注册 */,
+				6A5F597B1FA96BA0006DDFD2 /* 设置 */,
 				6A3083E21FA1874200AB8675 /* 首页 */,
 				6A3083E31FA1875900AB8675 /* 投资 */,
 				6A3083E81FA187A400AB8675 /* 提现 */,
@@ -382,6 +389,8 @@
 				6A5F34871FA6CE5100FED9EF /* YYSingUpViewController.m */,
 				6A7C35BB1FA85B6700F277F5 /* YYSetPasswordViewController.h */,
 				6A7C35BC1FA85B6700F277F5 /* YYSetPasswordViewController.m */,
+				6A5F59781FA95CCE006DDFD2 /* YYForgetPasswordViewController.h */,
+				6A5F59791FA95CCE006DDFD2 /* YYForgetPasswordViewController.m */,
 				6A7C35B51FA8181B00F277F5 /* YYGetVerificationCodeButton.h */,
 				6A7C35B61FA8181B00F277F5 /* YYGetVerificationCodeButton.m */,
 				6A7C35B81FA8329400F277F5 /* YYActionButton.h */,
@@ -567,6 +576,15 @@
 				6A47E0681FA300A10081D550 /* YYMessageViewController.m */,
 			);
 			path = "消息";
+			sourceTree = "<group>";
+		};
+		6A5F597B1FA96BA0006DDFD2 /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				6A5F597C1FA96C20006DDFD2 /* YYSettingViewController.h */,
+				6A5F597D1FA96C20006DDFD2 /* YYSettingViewController.m */,
+			);
+			path = "设置";
 			sourceTree = "<group>";
 		};
 		6AD978911FA0859D009D66AD = {
@@ -829,6 +847,7 @@
 				6A3084851FA1B94800AB8675 /* UIViewController+runtime.m in Sources */,
 				6A47E0691FA300A10081D550 /* YYMessageViewController.m in Sources */,
 				6A7C35B71FA8181B00F277F5 /* YYGetVerificationCodeButton.m in Sources */,
+				6A5F597A1FA95CCE006DDFD2 /* YYForgetPasswordViewController.m in Sources */,
 				6A3084C71FA1D79B00AB8675 /* UIImage+TBCityIconFont.m in Sources */,
 				6A47D8201FA6F6810051B221 /* HTHorizontalSelectionList.m in Sources */,
 				6A30844E1FA1AF9D00AB8675 /* MJRefreshBackGifFooter.m in Sources */,
@@ -846,6 +865,7 @@
 				6A3084B61FA1BEF400AB8675 /* NJKWebViewProgress.m in Sources */,
 				6A3084C61FA1D79A00AB8675 /* TBCityIconInfo.m in Sources */,
 				6A3084581FA1AF9D00AB8675 /* UIScrollView+MJRefresh.m in Sources */,
+				6A5F597E1FA96C20006DDFD2 /* YYSettingViewController.m in Sources */,
 				6A3084551FA1AF9D00AB8675 /* MJRefreshConst.m in Sources */,
 				6A3084AC1FA1BAE400AB8675 /* YYDeviceInfo.m in Sources */,
 				6A3084A91FA1BABE00AB8675 /* YYGlobal.m in Sources */,

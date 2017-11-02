@@ -10,6 +10,7 @@
 #import "YYPesonalCenterTableViewCell.h"
 #import "YYSignInViewController.h"
 #import "YYSingUpViewController.h"
+#import "YYSettingViewController.h"
 
 @interface YYPesonalCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSArray *colorArray;
@@ -126,7 +127,39 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self pushToSignIn];
+//    switch (indexPath.section) {
+//        case 0:
+//            {
+//
+//            }
+//            break;
+//        case 1:
+//        {
+//            if (indexPath.row == 0) {
+//
+//            }else{
+//
+//            }
+//        }
+//            break;
+//        case 2:
+//        {
+//            if (indexPath.row == 0) {
+//
+//            }else{
+//
+//            }
+//        }
+//            break;
+//        default:
+//            break;
+//    }
+    if (indexPath.section == 2 && indexPath.row == 1) {
+        YYSettingViewController *settingVC = [[YYSettingViewController alloc] init];
+        [self.navigationController pushViewController:settingVC animated:YES];
+    }else{
+        [self pushToSignIn];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
