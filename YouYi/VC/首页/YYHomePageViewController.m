@@ -7,6 +7,7 @@
 //
 
 #import "YYHomePageViewController.h"
+#import "YYInvestmentTableViewCell.h"
 #import "MJRefresh.h"
 
 @interface YYHomePageViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -53,12 +54,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"personalCenterTableViewCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    YYInvestmentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[YYInvestmentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = @"123";
+    [cell refreshData:nil];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 145;
 }
 
 - (void)didReceiveMemoryWarning {

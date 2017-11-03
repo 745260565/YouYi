@@ -67,6 +67,9 @@
 		6A5F34881FA6CE5100FED9EF /* YYSingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F34871FA6CE5100FED9EF /* YYSingUpViewController.m */; };
 		6A5F597A1FA95CCE006DDFD2 /* YYForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F59791FA95CCE006DDFD2 /* YYForgetPasswordViewController.m */; };
 		6A5F597E1FA96C20006DDFD2 /* YYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F597D1FA96C20006DDFD2 /* YYSettingViewController.m */; };
+		6A5F59811FAAB601006DDFD2 /* YYInvestmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F59801FAAB601006DDFD2 /* YYInvestmentTableViewCell.m */; };
+		6A5F59841FAAB782006DDFD2 /* YYBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F59831FAAB782006DDFD2 /* YYBaseModel.m */; };
+		6A5F598A1FAABD72006DDFD2 /* YYGameListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F59891FAABD72006DDFD2 /* YYGameListResponse.m */; };
 		6A7C35B71FA8181B00F277F5 /* YYGetVerificationCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C35B61FA8181B00F277F5 /* YYGetVerificationCodeButton.m */; };
 		6A7C35BA1FA8329400F277F5 /* YYActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C35B91FA8329400F277F5 /* YYActionButton.m */; };
 		6A7C35BD1FA85B6700F277F5 /* YYSetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C35BC1FA85B6700F277F5 /* YYSetPasswordViewController.m */; };
@@ -219,6 +222,12 @@
 		6A5F59791FA95CCE006DDFD2 /* YYForgetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYForgetPasswordViewController.m; sourceTree = "<group>"; };
 		6A5F597C1FA96C20006DDFD2 /* YYSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYSettingViewController.h; sourceTree = "<group>"; };
 		6A5F597D1FA96C20006DDFD2 /* YYSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYSettingViewController.m; sourceTree = "<group>"; };
+		6A5F597F1FAAB601006DDFD2 /* YYInvestmentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYInvestmentTableViewCell.h; sourceTree = "<group>"; };
+		6A5F59801FAAB601006DDFD2 /* YYInvestmentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYInvestmentTableViewCell.m; sourceTree = "<group>"; };
+		6A5F59821FAAB782006DDFD2 /* YYBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYBaseModel.h; sourceTree = "<group>"; };
+		6A5F59831FAAB782006DDFD2 /* YYBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYBaseModel.m; sourceTree = "<group>"; };
+		6A5F59881FAABD72006DDFD2 /* YYGameListResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYGameListResponse.h; sourceTree = "<group>"; };
+		6A5F59891FAABD72006DDFD2 /* YYGameListResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYGameListResponse.m; sourceTree = "<group>"; };
 		6A7C35B51FA8181B00F277F5 /* YYGetVerificationCodeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYGetVerificationCodeButton.h; sourceTree = "<group>"; };
 		6A7C35B61FA8181B00F277F5 /* YYGetVerificationCodeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYGetVerificationCodeButton.m; sourceTree = "<group>"; };
 		6A7C35B81FA8329400F277F5 /* YYActionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYActionButton.h; sourceTree = "<group>"; };
@@ -283,6 +292,8 @@
 				6A3083DE1FA183FD00AB8675 /* YYBaseViewController.m */,
 				6A47E06A1FA306A20081D550 /* YYBaseNavigationController.h */,
 				6A47E06B1FA306A20081D550 /* YYBaseNavigationController.m */,
+				6A5F59821FAAB782006DDFD2 /* YYBaseModel.h */,
+				6A5F59831FAAB782006DDFD2 /* YYBaseModel.m */,
 			);
 			path = "基类";
 			sourceTree = "<group>";
@@ -338,6 +349,8 @@
 		6A3083E11FA1866C00AB8675 /* 网络请求 */ = {
 			isa = PBXGroup;
 			children = (
+				6A5F59881FAABD72006DDFD2 /* YYGameListResponse.h */,
+				6A5F59891FAABD72006DDFD2 /* YYGameListResponse.m */,
 			);
 			path = "网络请求";
 			sourceTree = "<group>";
@@ -347,6 +360,8 @@
 			children = (
 				6A3083F11FA1899F00AB8675 /* YYHomePageViewController.h */,
 				6A3083F21FA1899F00AB8675 /* YYHomePageViewController.m */,
+				6A5F597F1FAAB601006DDFD2 /* YYInvestmentTableViewCell.h */,
+				6A5F59801FAAB601006DDFD2 /* YYInvestmentTableViewCell.m */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -867,9 +882,11 @@
 				6A3084581FA1AF9D00AB8675 /* UIScrollView+MJRefresh.m in Sources */,
 				6A5F597E1FA96C20006DDFD2 /* YYSettingViewController.m in Sources */,
 				6A3084551FA1AF9D00AB8675 /* MJRefreshConst.m in Sources */,
+				6A5F59811FAAB601006DDFD2 /* YYInvestmentTableViewCell.m in Sources */,
 				6A3084AC1FA1BAE400AB8675 /* YYDeviceInfo.m in Sources */,
 				6A3084A91FA1BABE00AB8675 /* YYGlobal.m in Sources */,
 				6A3083F31FA1899F00AB8675 /* YYHomePageViewController.m in Sources */,
+				6A5F59841FAAB782006DDFD2 /* YYBaseModel.m in Sources */,
 				6A47D81F1FA6F6810051B221 /* HTHorizontalSelectionListScrollView.m in Sources */,
 				6A3083F61FA189BC00AB8675 /* YYInvestmentViewController.m in Sources */,
 				6A30848E1FA1B9B800AB8675 /* UIButton+Block.m in Sources */,
@@ -877,6 +894,7 @@
 				6A3084991FA1BA0E00AB8675 /* NSMutableSet+safe.m in Sources */,
 				6A3084511FA1AF9D00AB8675 /* MJRefreshGifHeader.m in Sources */,
 				6A3084491FA1AF9D00AB8675 /* MJRefreshFooter.m in Sources */,
+				6A5F598A1FAABD72006DDFD2 /* YYGameListResponse.m in Sources */,
 				6A3084981FA1BA0E00AB8675 /* NSMutableArray+safe.m in Sources */,
 				6A47E06C1FA306A20081D550 /* YYBaseNavigationController.m in Sources */,
 				6A3084531FA1AF9D00AB8675 /* MJRefreshStateHeader.m in Sources */,
