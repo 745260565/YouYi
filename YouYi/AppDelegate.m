@@ -41,7 +41,6 @@
     
     mainTabBarController.viewControllers = @[nav1,nav2,nav3,nav4];
 
-    //
     mainTabBarController.selectedIndex = 0;
     [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
